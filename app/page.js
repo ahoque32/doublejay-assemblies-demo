@@ -1,93 +1,84 @@
-const services = [
-  'Furniture Assembly (including IKEA)',
-  'TV Mounting',
-  'Fitness / Gym Equipment Assembly & Repair',
-  'Gazebos & Pergolas',
-  'Storage Shed Assembly',
-  'Closet Installation',
-  'Window Treatments',
-  'Holiday Lighting',
-  'Playset Restoration & Relocation'
+import Link from 'next/link';
+
+const featuredServices = [
+  { title: 'Furniture Assembly', desc: 'IKEA, Wayfair, Amazon and custom furniture done right the first time.' },
+  { title: 'TV Mounting', desc: 'Clean, secure mounting with tidy cable management options.' },
+  { title: 'Gym Equipment', desc: 'Assembly + repair for home and commercial fitness setups.' },
+  { title: 'Outdoor Builds', desc: 'Gazebos, pergolas, sheds, and playset restoration/relocation.' }
 ];
 
-const trustPoints = [
-  'Insured & professional service team',
-  'On-time arrival with respectful technicians',
-  'Transparent pricing and clear quote process',
-  'Residential and commercial project experience',
-  'Built for faster quote requests and direct calls'
+const processSteps = [
+  'Tell us what needs to be assembled',
+  'Get a fast quote with transparent pricing',
+  'Book a convenient time window',
+  'Professional on-site install and walkthrough'
 ];
 
 export default function HomePage() {
   return (
     <main>
-      <section className="hero">
+      <section className="heroSection">
         <div className="container">
-          <p className="eyebrow">DoubleJay Assemblies Demo</p>
-          <h1>Done-for-you assembly services across Louisiana</h1>
-          <p className="subhead">
-            Fast, professional assembly and mounting for homes and businesses in Baton Rouge, New Orleans, Lafayette, and surrounding areas.
+          <span className="badge">DoubleJay Assemblies • Louisiana</span>
+          <h1>Professional Assembly Services That Save You Time and Stress</h1>
+          <p className="lead">
+            From furniture and TV mounting to sheds and fitness equipment, DoubleJay Assemblies delivers fast,
+            reliable installs across Baton Rouge, New Orleans, Lafayette, and surrounding areas.
           </p>
-          <div className="ctaRow">
-            <a href="#quote" className="btn btnPrimary">Request a Quote</a>
-            <a href="tel:2255236604" className="btn btnSecondary">Call Now: (225) 523-6604</a>
+          <div className="heroCtas">
+            <Link href="/contact" className="btn btnPrimary">Request a Quote</Link>
+            <a href="tel:2255236604" className="btn btnGhost">Call Now: (225) 523-6604</a>
+          </div>
+          <div className="heroStats">
+            <div><strong>Residential + Commercial</strong><span>Flexible service options</span></div>
+            <div><strong>Fast Scheduling</strong><span>Quick response and booking</span></div>
+            <div><strong>Trusted Local Team</strong><span>Built for Louisiana homeowners</span></div>
           </div>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <h2>Services customers ask for most</h2>
-          <div className="grid">
-            {services.map((service) => (
-              <article className="card" key={service}>
-                <p>{service}</p>
+          <div className="sectionHead">
+            <h2>High-demand services built for conversion</h2>
+            <Link href="/services" className="textLink">View all services →</Link>
+          </div>
+          <div className="cards">
+            {featuredServices.map((service) => (
+              <article className="card" key={service.title}>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section sectionMuted">
-        <div className="container">
-          <h2>Service Areas</h2>
-          <p className="areas">Baton Rouge • New Orleans • Lafayette • Surrounding Louisiana Areas</p>
+      <section className="section sectionAlt">
+        <div className="container twoCol">
+          <div>
+            <h2>Simple booking flow that drives more quote requests</h2>
+            <p>
+              This demo is designed around one goal: make it effortless for visitors to request a quote or call.
+              The structure removes friction, highlights trust, and keeps your strongest CTAs visible.
+            </p>
+          </div>
+          <ol className="steps">
+            {processSteps.map((step) => <li key={step}>{step}</li>)}
+          </ol>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <h2>Why homeowners and businesses choose DoubleJay</h2>
-          <ul className="trustList">
-            {trustPoints.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
-          <div className="testimonialPlaceholder">
-            <strong>Future reviews/testimonials section:</strong> Add customer photos, star ratings, and before/after assembly wins.
+        <div className="container ctaBanner">
+          <div>
+            <h2>Ready to increase calls and quote submissions?</h2>
+            <p>See how this structure can plug directly into your real lead flow.</p>
           </div>
-        </div>
-      </section>
-
-      <section className="section sectionMuted" id="quote">
-        <div className="container narrow">
-          <h2>Request a Quote</h2>
-          <p>Tell us what you need assembled and where you’re located. We’ll follow up fast.</p>
-          <form className="quoteForm">
-            <label>Name<input type="text" placeholder="Your full name" required /></label>
-            <label>Email<input type="email" placeholder="you@email.com" required /></label>
-            <label>Phone<input type="tel" placeholder="(xxx) xxx-xxxx" required /></label>
-            <label>City<input type="text" placeholder="Baton Rouge" required /></label>
-            <label>Service Type
-              <select defaultValue="">
-                <option value="" disabled>Select a service</option>
-                {services.map((service) => <option key={service} value={service}>{service}</option>)}
-              </select>
-            </label>
-            <label>Project Details<textarea placeholder="What needs to be assembled or mounted?" rows={4}></textarea></label>
-            <button type="submit" className="btn btnPrimary">Send Quote Request</button>
-            <p className="confirmation">Demo mode: this form is a UX mockup for conversion flow.</p>
-          </form>
+          <div className="heroCtas">
+            <Link href="/contact" className="btn btnPrimary">Get My Quote</Link>
+            <Link href="/areas" className="btn btnGhost">View Service Areas</Link>
+          </div>
         </div>
       </section>
     </main>

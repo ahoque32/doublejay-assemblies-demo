@@ -1,0 +1,20 @@
+Hi Jermal,
+
+I took a look at DoubleJay Assemblies’ current site and put together a live demo homepage tailored to how your team actually wins jobs in Louisiana:
+https://doublejay-assemblies-demo.vercel.app
+
+The demo is built to increase quote requests and calls by tightening the conversion flow:
+- clearer “Request a Quote” and “Call Now” CTAs above the fold
+- mobile-first layout for fast browsing on phones
+- faster load structure with less clutter
+- clearer service cards + service area visibility (Baton Rouge, New Orleans, Lafayette)
+- trust section designed for reviews/social proof so prospects feel confident booking
+
+Goal is simple: more qualified quote requests and more direct phone calls from local traffic.
+
+If useful, I can walk you through what I changed and why in a quick 10–15 minute screen share.
+
+Would you be open to that?
+
+Best,
+Jake
