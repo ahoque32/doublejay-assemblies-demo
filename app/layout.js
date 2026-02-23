@@ -21,20 +21,34 @@ export default function RootLayout({ children }) {
       <body>
         <header className="siteHeader">
           <div className="container navWrap">
-            <Link href="/" className="brand">DoubleJay Assemblies</Link>
-            <nav className="navLinks">
-              {nav.map((item) => (
-                <Link key={item.href} href={item.href}>{item.label}</Link>
-              ))}
-            </nav>
+            <div className="topNav">
+              <Link href="/" className="brand" aria-label="DoubleJay Assemblies home">
+                <span className="brandMark" aria-hidden="true">DJ</span>
+                <span className="brandMeta">
+                  <strong>DoubleJay Assemblies</strong>
+                  <span>Professional assembly & mounting</span>
+                </span>
+              </Link>
+              <nav className="navLinks" aria-label="Primary navigation">
+                {nav.map((item) => (
+                  <Link key={item.href} href={item.href}>{item.label}</Link>
+                ))}
+              </nav>
+            </div>
+            <div className="navActions">
+              <a href="tel:2255236604" className="headerPhone">(225) 523-6604</a>
+              <Link href="/contact" className="btn btnPrimary btnSmall headerCta">
+                Request Quote
+              </Link>
+            </div>
           </div>
         </header>
-        {children}
+        <div className="pageShell">{children}</div>
         <footer className="siteFooter">
           <div className="container footerWrap">
             <div>
               <strong>DoubleJay Assemblies</strong>
-              <p>Assembly & mounting services across Louisiana.</p>
+              <p>Premium assembly and mounting support for busy homes and businesses in Louisiana.</p>
             </div>
             <div className="footerLinks">
               <a href="tel:2255236604">(225) 523-6604</a>
